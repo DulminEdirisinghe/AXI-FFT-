@@ -65,3 +65,6 @@ compile_commands.json
 __pycache__/
 *.pyc
 .vscode/
+
+# Project recreated by rebuild_project.tcl
+rebuild/

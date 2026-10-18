@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-plot_fft.py - receive FFT frames from the MicroBlaze (fft_uart.c) over UART
+plot_fft.py - receive FFT frames from the MicroBlaze (helloworld.c) over UART
 and plot magnitude (dB), real and imaginary parts.
 
-Packet format (matches fft_uart.c):
+Packet format (matches helloworld.c):
     b'FFT:'            4-byte sync header
     N                  uint16 little-endian, number of FFT points
     BPS                uint8, bytes per sample
@@ -196,10 +196,10 @@ def update(fig, axs, lines, samples, shift, fs, frame_no):
 
 # --------------------------------------------------------------------------
 def main():
-    p = argparse.ArgumentParser(description="Plot FFT frames sent by fft_uart.c")
+    p = argparse.ArgumentParser(description="Plot FFT frames sent by helloworld.c")
     p.add_argument("--port", help="Serial port, e.g. COM5 or /dev/ttyUSB1")
     p.add_argument("--baud", type=int, default=115200,
-                   help="Must match UART_BAUD in fft_uart.c (default 115200)")
+                   help="Must match UART_BAUD in helloworld.c (default 115200)")
     p.add_argument("--file", help="Replay a raw capture saved with --record")
     p.add_argument("--record", help="Also save the raw serial stream to this file")
     p.add_argument("--fs", type=float, default=None, help="Sample rate in Hz for the x-axis")
