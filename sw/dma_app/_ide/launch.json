@@ -1,0 +1,45 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "tcf-debug",
+			"request": "launch",
+			"name": "dma_app_app_hw_1",
+			"debugType": "baremetal-fpga",
+			"attachToRunningTargetOptions": {
+				"targetSetupMode": "standalone",
+				"executeScript": true,
+				"scriptPath": ""
+			},
+			"autoAttachProcessChildren": false,
+			"target": {
+				"targetConnectionId": "Local",
+				"peersIniPath": "../../_ide/.peers.ini",
+				"context": "fpga"
+			},
+			"pathMap": [],
+			"targetSetup": {
+				"resetSystem": true,
+				"programDevice": false,
+				"partialBitstream": false,
+				"skipRevisionCheck": false,
+				"device": {
+					"plDevice": "Auto Detect",
+					"psDevice": "Auto Detect"
+				},
+				"bitstreamFile": "${workspaceFolder}\\dma_app\\_ide\\bitstream\\dma_bd_wrapper.bit",
+				"downloadElf": [
+					{
+						"core": "microblaze_0",
+						"resetProcessor": true,
+						"elfFile": "${workspaceFolder}\\dma_app\\build\\dma_app.elf",
+						"stopAtEntry": false,
+						"isSelfRelocatingApp": false,
+						"relativeAddress": ""
+					}
+				]
+			},
+			"internalConsoleOptions": "openOnSessionStart"
+		}
+	]
+}
